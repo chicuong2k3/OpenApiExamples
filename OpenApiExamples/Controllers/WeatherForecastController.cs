@@ -6,10 +6,6 @@ namespace OpenApiExamples.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -18,16 +14,23 @@ namespace OpenApiExamples.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        /// <summary>
+        /// Get a book by id
+        /// </summary>
+        /// <param name="id">The id of the book you want to get</param>
+        /// <returns>A book with the specified id</returns>
+        /// <remarks>
+        /// **Sample request**:  
+        ///     GET /WeatherForecast/12345678-1234-1234-1234-123456789012  
+        ///     
+        ///     {
+        ///         
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        public IActionResult Get(Guid id)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Ok();
         }
     }
 }

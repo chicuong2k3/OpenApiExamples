@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenApiExamples</name>
+    </assembly>
+    <members>
+        <member name="M:OpenApiExamples.Controllers.WeatherForecastController.Get(System.Guid)">
+            <summary>
+            Get a book by id
+            </summary>
+            <param name="id">The id of the book you want to get</param>
+            <returns>A book with the specified id</returns>
+            <remarks>
+            **Sample request**:  
+                GET /WeatherForecast/12345678-1234-1234-1234-123456789012  
+                
+                {
+                    
+                }
+            </remarks>
+        </member>
+    </members>
+</doc>
